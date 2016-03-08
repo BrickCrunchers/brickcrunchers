@@ -7,6 +7,7 @@ angular.module('app')
 
       CompanyFactory.getAll()
         .then( function(data) {
+          //console.log(data) -- see data in db
           $scope.companies = data;
         })
         .catch( function(error) {
