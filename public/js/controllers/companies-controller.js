@@ -7,6 +7,7 @@ angular.module('app')
 
       CompanyFactory.getAll()
         .then( function(data) {
+          //console.log(data) -- see data in db
           $scope.companies = data;
         })
         .catch( function(error) {
@@ -21,6 +22,13 @@ angular.module('app')
           console.error(error);
         });
 
+    };
+
+    $scope.addCompany = function(name) {
+      CompanyFactory.addCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
     };
 
     $scope.getAll();
