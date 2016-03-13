@@ -191,6 +191,8 @@ iframe {
 }
 
 .add-company-frame button {
+  background-color: rgba(100,100,255,0.4);
+  color: white;
   width: 18%;
   float: left;
   padding:2px;
@@ -200,7 +202,12 @@ iframe {
 }
 
 .add-company-frame button:hover {
-  background-color: rgba(100,100,255,0.4);
+  background-color: rgba(100,100,255,0.8);
+}
+
+.add-company-frame button[disabled] {
+  background-color: transparent;
+  color: gray;
 }
 
 /* remove default <ul> list styles */
