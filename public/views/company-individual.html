@@ -1,8 +1,11 @@
-<header class="company-details-header">
+<header class="company-details-header"
+        ng-class="{ 'company-undefined': !selection }">
 
-  <span class="company-name">{{selection.name}}</span>
-  <button class="btn btn-md btn-success"
-          ng-click="apply()" ng-show="!selection.status.applied">
+  <span class="company-name">
+    {{ selection.name || "- Please Add a Company -" }}
+  </span>
+  <button class="btn btn-md btn-success" ng-click="apply()"
+          ng-show="!selection.status.applied">
     Apply!
   </button>
   <span class="glyphicon glyphicon-trash" title="Delete"

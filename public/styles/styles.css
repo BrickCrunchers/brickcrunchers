@@ -292,6 +292,17 @@ iframe {
   background-color: rgba(100,100,255,0.8);
 }
 
+.company-details-header.company-undefined .company-name {
+  text-transform: none;
+  color: rgba(100,100,255,0.6);
+  font-weight: normal;
+}
+
+.company-details-header.company-undefined .glyphicon,
+.company-details-header.company-undefined .btn {
+  display: none;
+}
+
 .stages-bar {
   height: 20px;
   width: 95%;
