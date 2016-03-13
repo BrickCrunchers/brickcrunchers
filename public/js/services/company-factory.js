@@ -18,6 +18,17 @@ angular.module('app')
       });
 
     };
+
+    
+    var addCompany = function(name) {
+      return $http({
+        method: 'POST',
+        url: '/api/companies',
+        data: { name }
+      });
+    };
+
+
     var getCompany = function(name) {
       return $http({
         method: 'GET',
@@ -31,19 +42,14 @@ angular.module('app')
       });
     };
 
-    var addCompany = function(name) {
-      return $http({
-        method: 'POST',
-        url: '/api/companies',
-        data: { name }
-      });
-    };
+    /*
 
     var getCalendar = function() {
       return gapi.client.request({
         path: 'https://www.googleapis.com/calendar/v3/users/me/calendarList'
       });
     };
+    */
 
     var deleteCompany = function(id) {
       console.log('------factory id-----', id);
@@ -56,7 +62,7 @@ angular.module('app')
     return {
       getAll: getAll,
       addCompany: addCompany,
-      getCalendar: getCalendar,
+      //getCalendar: getCalendar,
       deleteCompany: deleteCompany,
       getCompany: getCompany
 

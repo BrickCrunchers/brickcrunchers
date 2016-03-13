@@ -4,33 +4,35 @@ angular.module('app')
     $scope.companies;
     $scope.selection;
 
-    $scope.getAll = function () {
+    $scope.getAll = function( pendingAdd ) {
 
       CompanyFactory.getAll()
         .then( function(data) {
           //console.log(data);
           $scope.companies = data;
-
-          // first company selected by default
-          $scope.selection = $scope.companies[0];
+          $scope.selectDefault( pendingAdd );
         })
         .catch( function(error) {
           console.error(error);
         });
     };
 
+
+    // set selected company (list item)
     $scope.select = function( company ) {
       $scope.selection = company;
     };
 
-    $scope.getCompany = function(name) {
-      // console.log(name);// -- it worked
-      CompanyFactory.getCompany(name)
-        .catch( function(error) {
-          console.error(error);
-        });
-
+    // first company selected by default, unless
+    // new company has been added (select it)
+    $scope.selectDefault = function( addedNewCompany ) {
+      if ( addedNewCompany ) {
+        $scope.selection = $scope.companies[ $scope.companies.length - 1 ];
+      } else {
+        $scope.selection = $scope.companies[0];
+      }
     };
+
 
     $scope.addCompany = function(name) {
 
@@ -46,8 +48,19 @@ angular.module('app')
           console.error(error);
         });
 
-      $scope.getAll();
+      $scope.getAll( true );
     };
+
+
+    $scope.getCompany = function(name) {
+      // console.log(name);// -- it worked
+      CompanyFactory.getCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
+
+    };
+
 
     $scope.deleteCompany = function(id) {
 
@@ -67,6 +80,7 @@ angular.module('app')
     $scope.appliedToCompany = function() {
 
     };
+    
     
     $scope.getAll();
 
