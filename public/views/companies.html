@@ -16,9 +16,9 @@
           <li>
             <div class="list-element" ng-click="select(company)"
                  ng-selected="selection.name === company.name">
+              {{company.name}}
               <span class="glyphicon glyphicon-ok"
                  ng-show="company.status.applied" title="Applied"></span>
-              {{company.name}}
             </div>
           </li>
         </ul>

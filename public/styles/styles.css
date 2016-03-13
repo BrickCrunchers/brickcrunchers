@@ -218,6 +218,7 @@ iframe {
 }
 
 .company-selector-panel li {
+  position: relative;
   margin-top: 6px;
 }
 
@@ -232,8 +233,10 @@ iframe {
 }
 
 .list-element .glyphicon {
-  color: green;
-  margin-right: 4px;
+  position: absolute;
+  top: 30%;
+  right: -2%;
+  color: yellowgreen;
 }
 
 .list-element:hover {
