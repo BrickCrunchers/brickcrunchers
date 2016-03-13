@@ -292,7 +292,8 @@ iframe {
 
 .taskpanel {
   margin-right: 12px;
-  border: solid 1px black;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 
 .taskbar {
@@ -304,12 +305,12 @@ iframe {
   float: left;
 }
 
-/* show button 'selected' on mouse-over or click */
 .buttonframe:hover {
   background-color: rgba(0,0,255,0.4);
   text-decoration: none;
 }
-.buttonframe:focus {
+
+.buttonframe[selected] {
   background-color: rgba(0,0,255,0.6);
   text-decoration: none;
 }
@@ -363,6 +364,9 @@ iframe {
   height: 1000px;
   width: 100%;
 }
+
+/*************************************
+*************************************/
 
 .loginReg-background {
   background: url("../images/loginBackground.jpg");

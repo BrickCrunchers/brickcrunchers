@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller( 'CompaniesController', [ '$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
+  .controller( 'CompaniesController', [ '$scope', '$timeout', 'CompanyFactory', function( $scope, $timeout, CompanyFactory ) {
 
     $scope.companies;
     $scope.selection;
@@ -23,8 +23,8 @@ angular.module('app')
       $scope.selection = company;
     };
 
-    // first company selected by default, unless
-    // new company has been added (select it)
+    // first company selected by default unless a new
+    // company has just been added (then select that)
     $scope.selectDefault = function( addedNewCompany ) {
       if ( addedNewCompany ) {
         $scope.selection = $scope.companies[ $scope.companies.length - 1 ];
@@ -66,7 +66,10 @@ angular.module('app')
       $scope.getAll();
     };
 
-
+    
+    /******************************************
+    // Research if this is still used anywhere
+    ******************************************/
     $scope.getCompany = function(name) {
       // console.log(name);// -- it worked
       CompanyFactory.getCompany(name)
@@ -80,8 +83,19 @@ angular.module('app')
     $scope.appliedToCompany = function() {
 
     };
+
+
+    // HACK: forcing #defaultTask click event
+    // inits nested view AND $scope.currentTask
     
-    
+    var selectDefaultTask = function () {
+      $timeout( function() {
+        var node = document.querySelector('#defaultTask');
+        angular.element(node).triggerHandler('click');
+      }, 100);
+    };
+
     $scope.getAll();
+    selectDefaultTask();
 
   }]);
