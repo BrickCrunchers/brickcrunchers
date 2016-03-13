@@ -222,6 +222,12 @@ iframe {
   margin-top: 6px;
 }
 
+.add-prompt {
+  color: rgba(100,100,255,0.6);
+  max-width: 60%;
+  margin: 25% auto;
+}
+
 .list-element {
   display: block;
   background-color: rgba(100,100,255,0.2);

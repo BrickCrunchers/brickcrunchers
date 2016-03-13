@@ -12,6 +12,10 @@
           <div class="clearfix"></div><!-- clears floats -->
         </div>
 
+        <div class="add-prompt" ng-show="companies.length === 0">
+          <p>To get started, please add a few companies you think you might be interested in...</p>
+        </div>
+
         <ul ng-repeat="company in companies">
           <li>
             <div class="list-element" ng-click="select(company)"

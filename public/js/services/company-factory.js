@@ -10,7 +10,7 @@ angular.module('app')
         url: '/api/companies'
       })
       .then( function (resp) {
-        //$rootScope.$emit('showCompany', resp.data);
+        $rootScope.$emit('showCompany', resp.data);
         return resp.data;
       })
       .catch( function(err) {
