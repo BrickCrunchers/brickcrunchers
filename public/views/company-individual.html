@@ -12,11 +12,11 @@
         ng-click="deleteCompany( selection._id )"></span>
 
   <div class="stages-bar">
-    <uib-progress class="stage-bar">
-    <uib-bar ng-repeat="bar in status" type="{{bar.type}}" value="20" box-shadow="0 0 5px 5px black"> 
-	  <span>{{bar.value}}</span>
-	</uib-bar>
-  </uib-progress>
+    <div class="interview-stage"
+         ng-repeat="(stage, done) in selection.status"
+         ng-class="{ 'completed': done }">
+      {{stage}}
+    </div>
   </div>
 
 </header>
