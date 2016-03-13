@@ -36,10 +36,6 @@ angular.module('app')
 
     $scope.addCompany = function(name) {
 
-      if ( name === '') {
-        return;
-      }
-
       CompanyFactory.addCompany(name)
         .then( function (data) {
           $scope.name = '';
