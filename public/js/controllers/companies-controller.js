@@ -2,17 +2,25 @@ angular.module('app')
   .controller( 'CompaniesController', [ '$rootScope', '$scope', 'CompanyFactory', function( $rootScope, $scope, CompanyFactory ) {
 
     $scope.companies;
+    $scope.selection;
 
     $scope.getAll = function () {
 
       CompanyFactory.getAll()
         .then( function(data) {
-          console.log(data);
+          //console.log(data);
           $scope.companies = data;
+
+          // first company selected by default
+          $scope.selection = $scope.companies[0];
         })
         .catch( function(error) {
           console.error(error);
         });
+    };
+
+    $scope.select = function( company ) {
+      $scope.selection = company;
     };
 
     $scope.getCompany = function(name) {

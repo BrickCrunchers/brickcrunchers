@@ -11,12 +11,14 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
       templateUrl: '../views/home.html'
     })
 
-    //declare COMPANIES page state with static templates navbar & companylist    
+    // nested COMPANIES view
+    
     .state('companies', {
       url: '/companies',
       views: {
         '': { 
           templateUrl: '../views/companies.html',
+          controller: 'CompaniesController',
         },
         'companyView@companies': {
           templateUrl: '../views/company-individual.html',
