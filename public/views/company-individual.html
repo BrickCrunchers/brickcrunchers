@@ -1,11 +1,22 @@
-<section>
-  <h3 class="company-name">interview stage: {{companyName}}</h3>
-  <uib-progress class="stage-bar">
+<header class="company-details-header">
+
+  <span class="company-name">{{selection.name}}</span>
+  <button class="btn btn-md btn-success"
+          ng-click="apply()" ng-show="!selection.status.applied">
+    Apply!
+  </button>
+  <span class="glyphicon glyphicon-trash" title="Delete"
+        ng-click="deleteCompany( selection._id )"></span>
+
+  <div class="stages-bar">
+    <uib-progress class="stage-bar">
     <uib-bar ng-repeat="bar in status" type="{{bar.type}}" value="20" box-shadow="0 0 5px 5px black"> 
 	  <span>{{bar.value}}</span>
 	</uib-bar>
   </uib-progress>
-</section>
+  </div>
+
+</header>
 
 
 <section class="taskpanel">

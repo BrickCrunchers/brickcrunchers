@@ -21,8 +21,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
           controller: 'CompaniesController',
         },
         'companyView@companies': {
-          templateUrl: '../views/company-individual.html',
-          controller: 'CompanyController'
+          templateUrl: '../views/company-individual.html'
         }
       }    
     })

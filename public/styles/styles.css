@@ -89,7 +89,7 @@ html {
   margin-left: 32px;
 }
 
-.btn {
+.image-area .btn {
   margin: 250px 60px 0 0;
   float: right;
   font-size: 20px;
@@ -240,22 +240,55 @@ iframe {
 }
 
 
-/*////////////////////////////////////
- CONTINUE NEW UI REVISIONS FROM HERE...
-////////////////////////////////////*/
-
 /********************************
       Company Details View
 *********************************/
 
-.company-name {
+.company-details-header {
+  padding: 20px 0;
   text-align: center;
 }
 
-.stage-bar {
-  width: 90%;
-  margin: 0 auto;
+.company-details-header .company-name {
+  margin-right: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
+.company-details-header .btn {
+  position: relative;
+  top: -2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.company-details-header .glyphicon {
+  font-size: 16px;
+  padding: 6px 6px 4px 4px;
+  color: white;
+  margin-left: 14px;
+  cursor: default;
+  background-color: rgba(100,100,255,0.4);
+  border-radius: 50%;
+}
+
+.company-details-header .glyphicon:hover {
+  background-color: rgba(100,100,255,0.8);
+}
+
+.stages-bar {
+  height: 20px;
+  width: 95%;
+  background: linear-gradient( 90deg, white, green );;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-top: 16px;
+}
+
+
+/********************************
+      Task Panel Area
+*********************************/
 
 .taskpanel {
   margin-right: 12px;

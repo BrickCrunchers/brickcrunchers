@@ -52,16 +52,6 @@ angular.module('app')
     };
 
 
-    $scope.getCompany = function(name) {
-      // console.log(name);// -- it worked
-      CompanyFactory.getCompany(name)
-        .catch( function(error) {
-          console.error(error);
-        });
-
-    };
-
-
     $scope.deleteCompany = function(id) {
 
       if ( !confirm('Are you sure you want to delete this company?') ) {
@@ -74,8 +64,18 @@ angular.module('app')
         });
         
       $scope.getAll();
+    };
+
+
+    $scope.getCompany = function(name) {
+      // console.log(name);// -- it worked
+      CompanyFactory.getCompany(name)
+        .catch( function(error) {
+          console.error(error);
+        });
 
     };
+
 
     $scope.appliedToCompany = function() {
 

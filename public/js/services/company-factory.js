@@ -10,7 +10,7 @@ angular.module('app')
         url: '/api/companies'
       })
       .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
+        //$rootScope.$emit('showCompany', resp.data);
         return resp.data;
       })
       .catch( function(err) {
@@ -25,6 +25,15 @@ angular.module('app')
         method: 'POST',
         url: '/api/companies',
         data: { name }
+      });
+    };
+
+
+    var deleteCompany = function(id) {
+      console.log('------factory id-----', id);
+      return $http({
+        method: 'DELETE',
+        url: '/api/companies/' + id
       });
     };
 
@@ -50,14 +59,6 @@ angular.module('app')
       });
     };
     */
-
-    var deleteCompany = function(id) {
-      console.log('------factory id-----', id);
-      return $http({
-        method: 'DELETE',
-        url: '/api/companies/' + id
-      });
-    };
 
     return {
       getAll: getAll,
