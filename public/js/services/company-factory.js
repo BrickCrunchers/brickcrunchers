@@ -1,7 +1,5 @@
 angular.module('app')
-  .factory( 'CompanyFactory', ['$rootScope', '$http', function($rootScope, $http) {
-
-    var firstCompany;
+  .factory( 'CompanyFactory', ['$http', function($http) {
 
     var getAll = function() {
 
@@ -10,7 +8,6 @@ angular.module('app')
         url: '/api/companies'
       })
       .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
         return resp.data;
       })
       .catch( function(err) {
@@ -44,29 +41,18 @@ angular.module('app')
         url: '/api/companies/' + name
       })
       .then( function (resp) {
-        $rootScope.$emit('showCompany', resp.data);
       })
       .catch( function(err) {
         console.log( 'CompanyFactory error:', err );
       });
     };
 
-    /*
-
-    var getCalendar = function() {
-      return gapi.client.request({
-        path: 'https://www.googleapis.com/calendar/v3/users/me/calendarList'
-      });
-    };
-    */
-
+    
     return {
       getAll: getAll,
       addCompany: addCompany,
-      //getCalendar: getCalendar,
       deleteCompany: deleteCompany,
       getCompany: getCompany
-
     };
 
   }]);
