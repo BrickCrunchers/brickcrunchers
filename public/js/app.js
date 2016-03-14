@@ -21,7 +21,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
           controller: 'CompaniesController',
         },
         'companyView@companies': {
-          templateUrl: '../views/company-individual.html'
+          templateUrl: '../views/company.html'
         }
       }    
     })
@@ -30,23 +30,23 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
     // nested TASK views...
 
     .state('companies.resume', {
-      templateUrl: '../views/resume.html'
+      templateUrl: '../views/task-resume.html'
     })
 
     .state('companies.cover-letter', {
-      templateUrl: '../views/cover-letter.html'
+      templateUrl: '../views/task-coverletter.html'
     })
 
     .state('companies.research', {
-      templateUrl: '../views/research.html'
+      templateUrl: '../views/task-research.html'
     })
 
     .state('companies.contacts', {
-      templateUrl: '../views/contacts.html'
+      templateUrl: '../views/task-contacts.html'
     })
 
     .state('companies.dates', {
-      templateUrl: '../views/dates.html',
+      templateUrl: '../views/task-dates.html',
       controller: 'CalendarController'
     })
     
