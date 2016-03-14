@@ -20,7 +20,7 @@ app.config( function( $stateProvider, $urlRouterProvider ) {
           templateUrl: '../views/companies.html',
           controller: 'CompaniesController',
         },
-        'companyView@companies': {
+        'company-details@companies': {
           templateUrl: '../views/company.html'
         }
       }    

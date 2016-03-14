@@ -2,7 +2,7 @@
 <div class="row">
 
     <!-- list of companies -->
-  <div class="col-sm-3">
+  <div class="col-sm-3 debug-col-left">
     <div class="company-selector-panel">
       <div class="listframe">
 
@@ -31,10 +31,10 @@
     </div>
   </div>
     
-    <!-- COLUMN VIEW OF ONE COMPANY -->
-    <div class="col-sm-9">
-        <div ui-view="companyView"></div>
-    </div>
+  <!-- selected company details -->
+  <div class="col-sm-9 debug-col-right">
+      <div ui-view="company-details"></div>
+  </div>
 
 </div> 
 

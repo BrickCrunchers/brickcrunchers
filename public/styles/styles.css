@@ -4,7 +4,11 @@
 
 html {
   font-family: sans-serif;
-  overflow-x: hidden; /* prevents horiz scrollbar when using vh for full-screen image */
+}
+
+body {
+  /* prevents horiz scrollbar when using vh for full-screen image */
+  overflow-x: hidden;
 }
 
 
@@ -67,12 +71,12 @@ html {
   height: 90vh; /* combined with menu = 100% screen height */
 }
 
-.left-column {
-  /*background-color: red;*/ /* for layout testing */
+ /* for layout testing... */
+.debug-col-left {
+  /*background-color: red;*/
 }
-
-.right-column {
-  /*background-color: green;*/ /* for layout testing */
+.debug-col-right {
+  /*background-color: green;*/
 }
 
 .tagline {
