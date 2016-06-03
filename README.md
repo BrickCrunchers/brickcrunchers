@@ -1,4 +1,5 @@
-# Project Name
+![alt tag](http://g.recordit.co/R5P20qrIGi.gif)
+# Job Hunt
 
 > Pithy project description
 

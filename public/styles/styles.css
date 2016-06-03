@@ -148,18 +148,32 @@ body {
 }
 
 .promo-block.other {
-  color: #000000;
+  color: #3c4e5d;;
+  text-align: center;
 }
+
+.promo-text {
+  text-align: center;
+}
+
+.promo {
+  float: center;
+}
+
 
 .video-frame {
-  background-color: black;
+  background-color: #BBBBBB;
   border-radius: 5px;
-  padding: 12px 6px;
+  padding: 6px 6px;
 }
 
-iframe {
+.video-frame img {
   width: 100%;
   min-height: 230px;
+}
+
+.footer {
+  min-height: 60px;
 }
 
 
@@ -438,10 +452,6 @@ iframe {
   background-color: transparent;
   color: gray;
 }
-
-/*************************************
-*************************************/
-
 
 .loginReg-background {
   background: url("../images/loginBackground.jpg");
